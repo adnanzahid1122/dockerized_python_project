@@ -8,10 +8,10 @@ def index():
     try:
         # Replace these with your MySQL database credentials
         db_connection = mysql.connector.connect(
-            host='mysql_container',
-            user='your_mysql_user',
-            password='your_mysql_password',
-            database='your_database_name'
+            host='mymysql',
+            user='root',
+            password='root',
+            database='root'
         )
 
         if db_connection.is_connected():
@@ -27,4 +27,4 @@ def index():
     return render_template('index.html', message=message)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,host="localhost",port=5000)
